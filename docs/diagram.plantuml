@@ -1,0 +1,46 @@
+@startuml "Flutter Todo MVVM Architecture"
+package "flutter_todo_mvvm" {
+    package "models" {
+        class Todo {
+            + int id
+            + String title
+            + bool completed
+            --
+            + Todo copyWith(int? id, String? title, bool? completed)
+        }
+    }
+
+    package "viewmodels" {
+        class TodoViewModel {
+            - List<Todo> _todos
+            + List<Todo> todos
+            --
+            + Future<void> loadTodos()
+            + void addTodo(String title)
+            + void toggleTodoCompletion(int id)
+            + void removeTodo(int id)
+        }
+    }
+
+    package "views" {
+        class TodoScreen {
+            + Widget build(BuildContext context)
+        }
+
+        class TodoInput {
+            + Function(String) onAdd
+        }
+
+        class TodoItem {
+            + Todo todo
+            + Function(int) onToggle
+            + Function(int) onRemove
+        }
+    }
+
+    TodoViewModel --> Todo : manages
+    TodoScreen --> TodoViewModel : uses
+    TodoInput --> TodoScreen : part of
+    TodoItem --> TodoScreen : part of
+}
+@enduml

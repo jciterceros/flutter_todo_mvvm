@@ -2,6 +2,12 @@
 
 Este projeto é um aplicativo de lista de tarefas (Todo) desenvolvido em Flutter, utilizando o padrão de arquitetura MVVM (Model-View-ViewModel). Ele foi projetado para ser modular, escalável e fácil de manter.
 
+### Diagrama de Classes
+
+Abaixo está o diagrama de classes do projeto, representado em PlantUML:
+
+
+
 ### Estrutura do Projeto
 
 A estrutura do projeto segue as melhores práticas para o padrão MVVM:
@@ -63,23 +69,6 @@ O projeto utiliza as seguintes dependências principais:
     ```bash
     flutter run
     ```
-
-### Estrutura de Arquivos Adicionais
-
-Certifique-se de incluir os seguintes arquivos estruturais no projeto:
-
-- `.gitignore`: Para ignorar arquivos desnecessários no controle de versão.
-- `analysis_options.yaml`: Para configurar regras de lint do Dart.
-- `LICENSE`: Para especificar a licença do projeto.
-
-Exemplo de `.gitignore`:
-```
-# Flutter/Dart
-.dart_tool/
-.flutter-plugins
-.packages
-build/
-```
 
 ### Contribuição
 
