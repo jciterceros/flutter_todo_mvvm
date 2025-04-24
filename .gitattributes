@@ -1,0 +1,6 @@
+# Ignore as pastas nativas da análise de linguagem
+.ios/ linguist-vendored
+.android/ linguist-vendored
+macos/ linguist-vendored
+windows/ linguist-vendored
+linux/ linguist-vendored
