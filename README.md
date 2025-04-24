@@ -6,7 +6,11 @@ Este projeto é um aplicativo de lista de tarefas (Todo) desenvolvido em Flutter
 
 Abaixo está o diagrama de classes do projeto, representado em PlantUML:
 
-
+<p align="center">
+    <a href="https://github.com/jciterceros/flutter_todo_mvvm/blob/015a85d5182bf3285f9344d7425775e9e22486ba/docs/diagram.png" target="blank">
+        <img src="https://github.com/jciterceros/flutter_todo_mvvm/blob/015a85d5182bf3285f9344d7425775e9e22486ba/docs/diagram.png" width="600" alt="Class Diagram" />
+    </a>
+</p>
 
 ### Estrutura do Projeto
 
