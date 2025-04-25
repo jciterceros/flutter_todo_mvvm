@@ -1,0 +1,65 @@
+@startuml "Flutter Todo MVVM Architecture Using SOLID and Repository Pattern"
+package "flutter_todo_mvvm" {
+    package "models" {
+        class Todo {
+            + int id
+            + String title
+            + bool completed
+            --
+            + Todo copyWith({int? id, String? title, bool? completed})
+        }
+    }
+
+    package "viewmodels" {
+        class TodoViewModel {
+            - List<Todo> _todos
+            + List<Todo> todos
+            --
+            + Future<void> loadTodos()
+            + void addTodo(String title)
+            + void toggleTodoCompletion(int id)
+            + void removeTodo(int id)
+        }
+    }
+
+    package "services" {
+        interface TodoRepository {
+            + Future<List<Todo>> fetchTodos()
+            + Future<void> addTodo(Todo todo)
+            + Future<void> updateTodo(Todo todo)
+            + Future<void> deleteTodoById(int id)
+        }
+
+        class LocalTodoRepository implements TodoRepository {
+            + Future<List<Todo>> fetchTodos()
+            + Future<void> addTodo(Todo todo)
+            + Future<void> updateTodo(Todo todo)
+            + Future<void> deleteTodoById(int id)
+        }
+
+    }
+
+    package "views" {
+        class HomeView {
+            + Widget build(BuildContext context)
+        }
+
+        class TodoInput {
+            + Function(String) onAdd
+        }
+
+        class TodoItem {
+            + Todo todo
+            + Function(int) onToggle
+            + Function(int) onRemove
+        }
+    }
+
+    TodoViewModel --> Todo : manages
+    TodoViewModel --> TodoRepository : depends on
+    HomeView --> TodoViewModel : uses
+    TodoInput --> HomeView : part of
+    TodoItem --> HomeView : part of
+    LocalTodoRepository ..|> TodoRepository : implements
+}
+@enduml
