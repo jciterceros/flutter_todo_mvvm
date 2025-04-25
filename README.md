@@ -93,6 +93,53 @@ O projeto utiliza as seguintes dependências principais:
 
 ---
 
+### **Testes Unitarios e Integração**
+
+O projeto inclui testes unitários e de widget para garantir a qualidade do código e o funcionamento correto das funcionalidades. A estrutura de testes está organizada na pasta `test/`:
+
+```
+test/
+├── integration/
+│   └── views/
+│       └── home_view_test.dart                 # Teste da tela inicial
+└── unit/
+    ├── models/
+    │   └── todo_test.dart                      # Teste do modelo Todo
+    ├── services/
+    │   ├── todo_repository_test.dart           # Teste do repositório de tarefas
+    │   ├── local_todo_repository_test.dart     # Teste do repositório local
+    ├── viewmodels/
+    │   └── todo_viewmodel_test.dart            # Teste do ViewModel de tarefas
+    └── utils/
+        └── logger_test.dart                    # Teste do utilitário de logger
+
+```
+
+#### **Como Executar os Testes**
+
+1. Certifique-se de que todas as dependências estão instaladas:
+    ```bash
+    flutter pub get
+    ```
+
+2. Execute os testes com o seguinte comando:
+    ```bash
+    flutter test
+    ```
+
+3. Para executar testes específicos, forneça o caminho do arquivo de teste:
+    ```bash
+    flutter test test/caminho/do/arquivo_test.dart
+    ```
+
+Os testes cobrem cenários como:
+- Validação de dados nos modelos.
+- Verificação da lógica de negócios no `TodoViewModel`.
+- Renderização correta dos widgets.
+- Funcionamento dos repositórios de dados.
+
+---
+
 ### **Requisitos**
 
 - Flutter SDK 3.x ou superior.
