@@ -1,6 +1,9 @@
-# Ignore as pastas nativas da análise de linguagem
-.ios/ linguist-vendored
-.android/ linguist-vendored
-macos/ linguist-vendored
-windows/ linguist-vendored
-linux/ linguist-vendored
+# Declare support for web and android only
+*.dart text eol=lf
+*.yaml text eol=lf
+
+# Exclude other platforms
+ios/ export-ignore
+macos/ export-ignore
+windows/ export-ignore
+linux/ export-ignore
