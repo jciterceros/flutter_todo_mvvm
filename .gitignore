@@ -59,7 +59,7 @@ web/.pub-cache/
 web/.pub/
 
 # Exclude other platforms
-ios/
-macos/
-windows/
-linux/
+/ios/
+/macos/
+/windows/
+/linux/
